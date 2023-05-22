@@ -1,0 +1,32 @@
+{%extends 'staff/insert.html' %}
+
+{% block title %} Update Staff {% endblock %}
+
+{%block content%}
+{% endblock %}
+
+{%block staff%}
+
+    {%block id%}{{staff.id}}{% endblock %}
+
+    {%block name%}{{staff.name}}{% endblock %}
+
+    {%block email%}{{staff.email}}{% endblock %}
+
+    {%block track%}{{staff.track}}{% endblock %}
+
+{% endblock %}
+
+
+
+{% block supervisor %}
+
+<select class="form-select" name="track" aria-label="Default select example" id="staffTrack">
+    <option disabled selected>Supervisor</option>
+    {%for sup in staff%}
+        <option selected={% if sup.id == staff.staffObj.id %} true {% endif %} value="{{sup.id}}">{{sup.name}}</option>
+    {%endfor%}
+
+</select>
+
+{% endblock %}
